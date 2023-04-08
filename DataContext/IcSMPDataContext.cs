@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using IcSMP_ApiApp.DTOs;
+using Microsoft.EntityFrameworkCore;
 
 namespace IcSMP_ApiApp.DataContext
 {
