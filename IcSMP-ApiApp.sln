@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IcSMP-ApiApp", "IcSMP-ApiApp.csproj", "{88761AF6-80D9-446D-9CBD-1B25A7B4C8CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IcSMP-ApiApp", "IcSMP-ApiApp.csproj", "{88761AF6-80D9-446D-9CBD-1B25A7B4C8CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IcSMP-ApiApp.Tests", "..\IcSMP-ApiApp.Tests\IcSMP-ApiApp.Tests.csproj", "{CA612503-2BB6-42D4-B69F-4566AAE5B088}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{88761AF6-80D9-446D-9CBD-1B25A7B4C8CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88761AF6-80D9-446D-9CBD-1B25A7B4C8CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88761AF6-80D9-446D-9CBD-1B25A7B4C8CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA612503-2BB6-42D4-B69F-4566AAE5B088}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA612503-2BB6-42D4-B69F-4566AAE5B088}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA612503-2BB6-42D4-B69F-4566AAE5B088}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA612503-2BB6-42D4-B69F-4566AAE5B088}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

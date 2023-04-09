@@ -94,6 +94,11 @@ namespace IcSMP_ApiApp.Repository
             await _context.SaveChangesAsync();
             return category;
         }
+
+        public Task GetCategoryByIdAsync()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

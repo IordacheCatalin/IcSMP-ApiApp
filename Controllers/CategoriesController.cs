@@ -24,7 +24,7 @@ namespace IcSMP_ApiApp.Controllers
 
         //Get all method
         [HttpGet]
-        public async Task<IActionResult> GetAllAsync()
+        public async Task<IActionResult> GetAllCategoriesAsync()
         {
             try
             {

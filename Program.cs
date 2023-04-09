@@ -19,6 +19,7 @@ builder.Services.AddTransient<ICategoriesRepository, CategoriesRepository>();
 builder.Services.AddTransient<ICategoriesService, CategoriesService>();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Logging.AddLog4Net("log4net.config");
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
