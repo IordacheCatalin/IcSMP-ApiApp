@@ -1,4 +1,5 @@
 ﻿using IcSMP_ApiApp.DTOs;
+using IcSMP_ApiApp.DTOs.CreateUpdateObjects;
 using IcSMP_ApiApp.Repository;
 
 namespace IcSMP_ApiApp.Services
@@ -22,13 +23,23 @@ namespace IcSMP_ApiApp.Services
 
         public async Task CreateCategoryAsync(Category newCategory)
         {
-            
+
             await _repository.CreateCategoryAsync(newCategory);
         }
 
         public async Task<bool> DeleteCategoryAsync(int id)
         {
             return await _repository.DeleteCategoryAsync(id);
+        }
+
+        public async Task<CreateUpdateCategory> UpdateCategoryAsync(int id, CreateUpdateCategory category)
+        {
+            return await _repository.UpdateCategoryAsync(id, category);
+        }
+
+        public async Task<CreateUpdateCategory> UpdatePartiallyCategoryAsync(int id, CreateUpdateCategory category)
+        {
+            return await _repository.UpdatePartiallyCategoryAsync(id, category);
         }
     }
 }

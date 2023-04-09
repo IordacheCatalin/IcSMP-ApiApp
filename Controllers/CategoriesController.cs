@@ -1,4 +1,5 @@
 ﻿using IcSMP_ApiApp.DTOs;
+using IcSMP_ApiApp.DTOs.CreateUpdateObjects;
 using IcSMP_ApiApp.Helpers;
 using IcSMP_ApiApp.Services;
 using Microsoft.AspNetCore.Http;
@@ -105,6 +106,58 @@ namespace IcSMP_ApiApp.Controllers
             {
                 _logger.LogInformation($"DeleteCategoryAsync error: {ex.Message}");
                 return StatusCode((int)(HttpStatusCode.InternalServerError), ex.Message);
+            }
+        }
+        //Update
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateCategory([FromRoute]int id, [FromBody]CreateUpdateCategory category)
+        {
+            try
+            {
+                _logger.LogInformation("UpdateCategoryAsync started");
+                if (category == null) 
+                { 
+                    return BadRequest(ErrorMessagesEnum.BadRequest); 
+                }
+                CreateUpdateCategory updatedCategory = await _categoriesService.UpdateCategoryAsync(id, category);
+                if(updatedCategory == null)
+                {
+                    return StatusCode((int)HttpStatusCode.NoContent,ErrorMessagesEnum.NoElementFound);
+                }
+                return Ok(SuccessMessagesEnum.ElementSuccesfullyUpdated);
+            }            
+
+            catch (Exception ex)
+            {
+                _logger.LogError($"UpdateCategoryAsync error: {ex.Message}");
+                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        //Patch
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> UpdatePartiallyCategoryAsync([FromRoute] int id, [FromBody] CreateUpdateCategory category)
+        {
+            try
+            {
+                _logger.LogInformation("UpdatePartiallyCategoryAsync started");
+                if (category == null)
+                {
+                    return BadRequest(ErrorMessagesEnum.BadRequest);
+                }
+                CreateUpdateCategory updatedCategory = await _categoriesService.UpdatePartiallyCategoryAsync(id, category);
+                if (updatedCategory == null)
+                {
+                    return StatusCode((int)HttpStatusCode.NoContent, ErrorMessagesEnum.NoElementFound);
+                }
+                return Ok(SuccessMessagesEnum.ElementSuccesfullyUpdated);
+            }
+
+            catch (Exception ex)
+            {
+                _logger.LogError($"UpdatePartiallyCategoryAsync error: {ex.Message}");
+                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
             }
         }
     }
